@@ -1,3 +1,8 @@
+/*
+	Main.cpp
+	This is the main interface for the application.
+*/
+
 #include <iostream>
 #include <fstream>
 #include "Markov.h"
@@ -7,6 +12,13 @@ using namespace std;
 
 int main(int argc, char ** argv) 
 {
+	if (argc < 2) 
+	{
+		// Insufficient arguments
+		cout << "Usage: ./main + <filename>";
+		return 1;
+	}
+
 	cout << "Howdy" << endl;
 	cout << "The file input was " << argv[1] << ".\n" << endl;
 	string filename = argv[1];
@@ -19,6 +31,4 @@ int main(int argc, char ** argv)
 	//cout << str;
 
 	matt::Markov mark = matt::Markov(str);
-	std::vector<std::string> vec = utility::split("Hello, I am a dog", ' ');
-	cout << utility::combine(vec, 3, 1);
 }
