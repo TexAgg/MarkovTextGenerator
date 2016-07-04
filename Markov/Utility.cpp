@@ -40,11 +40,11 @@ std::vector<std::string> split(const std::string &s, char delim)
 std::string combine(std::vector<std::string> vec, int size, int start)
 {
 	std::string str;
-	for (int i = start; i < size; i++)
+	for (int i = start; i < start + size; i++)
 	{
 		str += vec.at(i);
-		if (i != size - 1)
-			str += " ";
+		//if (i != size)
+		str += " ";
 	}
 	return str;
 }

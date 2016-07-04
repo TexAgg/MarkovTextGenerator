@@ -1,6 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include "Markov.h"
+#include "Utility.h"
 
 using namespace std;
 
@@ -15,7 +16,9 @@ int main(int argc, char ** argv)
 	infile.open(filename);
 	// http://stackoverflow.com/a/2602060/5415895
 	string str((istreambuf_iterator<char>(infile)), istreambuf_iterator<char>());
-	cout << str;
+	//cout << str;
 
 	matt::Markov mark = matt::Markov(str);
+	std::vector<std::string> vec = utility::split("Hello, I am a dog", ' ');
+	cout << utility::combine(vec, 3, 1);
 }
