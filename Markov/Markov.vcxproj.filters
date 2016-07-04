@@ -37,5 +37,6 @@
     <Text Include="nodejs.txt">
       <Filter>Resource Files</Filter>
     </Text>
+    <Text Include="test.txt" />
   </ItemGroup>
 </Project>

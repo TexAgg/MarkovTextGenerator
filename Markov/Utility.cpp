@@ -37,13 +37,13 @@ std::vector<std::string> split(const std::string &s, char delim)
 	@param std::vector<std::string> vec A vector of strings.
 	@param int size The number of elements to combine.
 */
-std::string combine(std::vector<std::string> vec, int size)
+std::string combine(std::vector<std::string> vec, int size, int start)
 {
 	std::string str;
-	for (int i = 0; i < size; i++)
+	for (int i = start; i < size; i++)
 	{
 		str += vec.at(i);
-		if (i != 0 || i != size - 1)
+		if (i != size - 1)
 			str += " ";
 	}
 	return str;
