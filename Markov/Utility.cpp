@@ -58,6 +58,12 @@ std::string get_first_word(std::string str)
 	return word;
 }
 
+/**
+	Gets a random element from a vector of strings.
+	The name is because of PHP's method.
+	I should have used a template but I didn't
+	want to deal with that.
+*/
 std::string array_rand(std::vector<std::string> vec)
 {
 	srand(time(NULL));
