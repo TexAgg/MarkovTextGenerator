@@ -49,19 +49,8 @@ std::string Markov::get_next_word(std::string str)
 	if (str.length() == 0 || chain[str ].size() == 0) return "";
 	std::vector<std::string> vec = utility::split(str, ' ');
 	//if (vec.size() == 0) return "";
-	std::string newstring = vec[1] + " " + utility::array_rand(chain[str]);
+	std::string newstring = vec[order - 1] + " " + utility::array_rand(chain[str]);
 	return utility::split(newstring, ' ')[1] + " ";
-	
-	/*
-	for (auto k : chain)
-	{
-		std::string second = utility::array_rand(chain[str]);
-		if (utility::get_first_word(k.first) == second)
-		{
-			
-		}
-	}
-	*/
 }
 
 } // !Namespace matt

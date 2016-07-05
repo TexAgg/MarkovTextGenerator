@@ -37,6 +37,11 @@
     <Text Include="nodejs.txt">
       <Filter>Resource Files</Filter>
     </Text>
-    <Text Include="test.txt" />
+    <Text Include="test.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="calvin.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
   </ItemGroup>
 </Project>

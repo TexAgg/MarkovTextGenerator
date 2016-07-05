@@ -30,6 +30,6 @@ int main(int argc, char ** argv)
 	string str((istreambuf_iterator<char>(infile)), istreambuf_iterator<char>());
 	//cout << str;
 
-	matt::Markov mark = matt::Markov(str);
+	matt::Markov mark = matt::Markov(str,1);
 	cout << mark.generate() << endl;
 }
