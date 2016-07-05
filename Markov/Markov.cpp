@@ -19,38 +19,11 @@ Markov::Markov(std::string input, int ord):
 		if (i+ord < strings.size())
 			chain[combined].push_back(strings[i + ord]);
 	}
+	int five = 5;
 }
 
 Markov::~Markov()
 {
-}
-
-std::string Markov::generate()
-{
-	std::string output = chain.begin()->first;
-	output += get_next_word(output);
-	std::vector<std::string> vec = utility::split(output, ' ');
-	std::string str = vec[vec.size()-2] + " " + vec[vec.size()-1] + " ";
-	while (get_next_word(str) != "")
-	{
-		output += get_next_word(str);
-		vec = utility::split(output, ' ');
-		str = vec[vec.size() - 2] + " " + vec[vec.size() - 1] + " ";
-	}
-
-	return output;
-}
-
-/**
-	
-*/
-std::string Markov::get_next_word(std::string str)
-{
-	if (str.length() == 0 || chain[str ].size() == 0) return "";
-	std::vector<std::string> vec = utility::split(str, ' ');
-	//if (vec.size() == 0) return "";
-	std::string newstring = vec[order - 1] + " " + utility::array_rand(chain[str]);
-	return utility::split(newstring, ' ')[1] + " ";
 }
 
 } // !Namespace matt
