@@ -34,13 +34,13 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="nodejs.txt">
+    <Text Include="text\calvin.txt">
       <Filter>Resource Files</Filter>
     </Text>
-    <Text Include="test.txt">
+    <Text Include="text\test.txt">
       <Filter>Resource Files</Filter>
     </Text>
-    <Text Include="calvin.txt">
+    <Text Include="text\nodejs.txt">
       <Filter>Resource Files</Filter>
     </Text>
   </ItemGroup>

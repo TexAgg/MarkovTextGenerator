@@ -155,9 +155,9 @@
     <ClInclude Include="Utility.h" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="calvin.txt" />
-    <Text Include="nodejs.txt" />
-    <Text Include="test.txt" />
+    <Text Include="text\calvin.txt" />
+    <Text Include="text\nodejs.txt" />
+    <Text Include="text\test.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

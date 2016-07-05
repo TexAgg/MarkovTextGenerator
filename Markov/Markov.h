@@ -18,7 +18,7 @@ class Markov
 	std::map<std::string, std::vector<std::string>> chain;
 
 public:
-	Markov(std::string input, int ord=2);
+	Markov(std::string input, int ord=1);
 	~Markov();
 
 }; // !Markov class
