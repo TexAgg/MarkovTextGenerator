@@ -17,9 +17,13 @@ class Markov
 	// A map of strings to a vector of strings.
 	std::map<std::string, std::vector<std::string>> chain;
 
+	std::string get_next_word(std::string str);
+
 public:
 	Markov(std::string input, int ord=2);
 	~Markov();
+
+	std::string generate();
 
 }; // !Markov class
 

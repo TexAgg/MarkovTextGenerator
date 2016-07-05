@@ -31,4 +31,5 @@ int main(int argc, char ** argv)
 	//cout << str;
 
 	matt::Markov mark = matt::Markov(str);
+	cout << mark.generate() << endl;
 }
