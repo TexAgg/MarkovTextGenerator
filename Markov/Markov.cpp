@@ -16,11 +16,12 @@ Markov::Markov(std::string input, int ord):
 	order(ord)
 {
 	std::vector<std::string> strings = utility::split(input, ' ');
+	limit = strings.size();
 
 	// Get frequencies.
 	for (int i = 0; i < strings.size()-ord+1; i++)
 	{
-		std::string combined = utility::trim(utility::combine(strings, ord, i));
+		std::string combined = utility::rtrim(utility::combine(strings, ord, i));
 		chain.insert(std::pair<std::string, std::vector<std::string>>(combined, std::vector<std::string>()));
 		if (i+ord < strings.size())
 			chain[combined].push_back(strings[i + ord]);
@@ -35,7 +36,7 @@ Markov::~Markov()
 
 std::string Markov::generate()
 {
-	std::string output = "I love Vennela.";
+	std::string output;
 
 	/*
 		1. Get random starting point from chain, elem, 
@@ -62,11 +63,17 @@ std::string Markov::generate()
 
 	// 4. Change elem to the random element from elem.second.
 	// 5. Continue until the size of elem.second == 0.
+	int i = 0;
 	while (chain.at(elem).size() != 0)
 	{
 		elem = utility::array_rand(chain.at(elem));
 		output += " " + elem;
-		if (!chain.count(elem)) break;
+		// http://stackoverflow.com/a/11765524/5415895
+		if (!chain.count(elem)) 
+			break;
+		i++;
+		if (i == limit)
+			break;
 	}
 
 	return output;

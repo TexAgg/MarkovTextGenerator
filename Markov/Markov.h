@@ -18,6 +18,8 @@ class Markov
 	// A map of strings to a vector of strings.
 	// Also, the frequency table.
 	std::map<std::string, std::vector<std::string>> chain;
+	// Maximum number of words, to prevent infinite loops.
+	int limit;
 
 public:
 	Markov(std::string input, int ord=1);

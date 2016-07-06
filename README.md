@@ -1,8 +1,17 @@
 # Markov Text Generator
+A Markov text generator.
 
 ---
 
 ## Instructions
+Takes a command-line argument which is the file to read from.
+
+
+---
+
+## Todo
+1. Support cases other than order 1.
+2. GUI
 
 ---
 
