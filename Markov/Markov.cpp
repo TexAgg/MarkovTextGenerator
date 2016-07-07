@@ -12,10 +12,10 @@ namespace matt
 	Defaults to 1.
 */
 Markov::Markov(std::string input, int ord): 
-	input_text(input),
 	order(ord)
-{
-	std::vector<std::string> strings = utility::split(input, ' ');
+{	
+	input_text = utility::strip(input);
+	std::vector<std::string> strings = utility::split(input_text, ' ');
 	limit = strings.size();
 
 	// Get frequencies.
@@ -37,6 +37,7 @@ Markov::~Markov()
 std::string Markov::generate()
 {
 	std::string output;
+	srand(time(NULL));
 
 	/*
 		1. Get random starting point from chain, elem, 
@@ -56,6 +57,7 @@ std::string Markov::generate()
 	output = elem;
 
 	// 2. Select a random element from the vector elem.second.
+	//srand(time(NULL));
 	elem = utility::array_rand(chain.at(elem));
 
 	// 3. Append this to the output string.

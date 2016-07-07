@@ -1,5 +1,6 @@
 # Markov Text Generator
 A Markov text generator.
+This was supposed to be a quick personal project but it ended up taking way too long.
 
 ---
 
@@ -19,6 +20,7 @@ Takes a command-line argument which is the file to read from.
 
 ### Markov Text Generators
 * [Summary](http://stackoverflow.com/questions/4081662/explain-markov-chain-algorithm-in-laymans-terms)
+* [Mark V. Shaney](http://www.yisongyue.com/shaney/)
 
 ### C++
 * [Maps](http://www.cplusplus.com/reference/map/map/)

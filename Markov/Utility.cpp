@@ -66,7 +66,7 @@ std::string get_first_word(std::string str)
 */
 std::string array_rand(std::vector<std::string> vec)
 {
-	srand(time(NULL));
+	//srand(time(NULL));
 	int rank = rand() % vec.size();
 	return vec[rank];
 }
@@ -89,6 +89,26 @@ std::string &rtrim(std::string &s)
 std::string &trim(std::string &s) 
 {
 	return ltrim(rtrim(s));
+}
+
+/**
+	Checks to see if a string is at the end of a sentence.
+*/
+bool check_sentence_end(std::string str)
+{
+	int len = str.length();
+	std::string punct = str.substr(len - 1);
+	if (punct == "!" || punct == "." || punct == "?")
+		return true;
+	else
+		return false;
+}
+
+std::string strip(std::string str)
+{
+	std::regex reg(" +|\n|\r|\f");
+	std::string output = std::regex_replace(str, reg, " ");
+	return output;
 }
 
 }

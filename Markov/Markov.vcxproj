@@ -155,7 +155,6 @@
     <ClInclude Include="Utility.h" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="text\calvin.txt" />
     <Text Include="text\nodejs.txt" />
     <Text Include="text\test.txt" />
   </ItemGroup>

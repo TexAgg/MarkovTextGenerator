@@ -10,7 +10,8 @@
 #include <functional> 
 #include <cctype>
 #include <locale>
-#include <time.h>   
+#include <time.h>
+#include <regex>
 
 namespace utility
 {
@@ -28,6 +29,10 @@ std::string array_rand(std::vector<std::string> vec);
 std::string &ltrim(std::string &s);
 std::string &rtrim(std::string &s);
 std::string &trim(std::string &s);
+
+bool check_sentence_end(std::string str);
+
+std::string strip(std::string str);
 
 }
 
