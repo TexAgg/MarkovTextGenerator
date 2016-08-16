@@ -1,6 +1,7 @@
 
 # Added by me
 _BUILD/
+/.vscode
 
 # Created by https://www.gitignore.io/api/visualstudio,cmake,c++,c
 
