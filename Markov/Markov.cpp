@@ -4,30 +4,32 @@ namespace matt
 {
 
 /**
-	Constructor for Markov object.
-
-	@param string input The string to use as an
-	initial state.
-	@param int ord The order of the Markov Chain.
-	Defaults to 1.
+* Constructor for Markov object.
+*
+* @param string input The string to use as an
+* initial state.
+* @param int ord The order of the Markov Chain.
+* Defaults to 1.
 */
 Markov::Markov(std::string input, int ord): 
 	order(ord)
 {	
 	input_text = utility::strip(input);
-	std::vector<std::string> strings = utility::split(input_text, ' ');
+	std::vector<std::string> strings;
+	// http://stackoverflow.com/questions/5607589/right-way-to-split-an-stdstring-into-a-vectorstring
+	boost::split(strings, input, boost::is_any_of(", "), boost::token_compress_on);
 	limit = strings.size();
 
 	// Get frequencies.
 	for (int i = 0; i < strings.size()-ord+1; i++)
 	{
-		std::string combined = utility::rtrim(utility::combine(strings, ord, i));
-		chain.insert(std::pair<std::string, std::vector<std::string>>(combined, std::vector<std::string>()));
+		std::string combined = utility::combine(strings, ord, i);
+		// Trim the string.
+		boost::trim_right(combined);
+		chain.insert(std::pair<std::string, std::vector< std::string> >(combined, std::vector<std::string>()));
 		if (i+ord < strings.size())
 			chain[combined].push_back(strings[i + ord]);
 	}
-	// Just to have a place to break for debugging.
-	int five = 5;
 }
 
 Markov::~Markov()
@@ -57,7 +59,6 @@ std::string Markov::generate()
 	output = elem;
 
 	// 2. Select a random element from the vector elem.second.
-	//srand(time(NULL));
 	elem = utility::array_rand(chain.at(elem));
 
 	// 3. Append this to the output string.

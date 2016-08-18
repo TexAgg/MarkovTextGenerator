@@ -5,6 +5,19 @@ This was supposed to be a quick personal project but it ended up taking way too 
 ---
 
 ## Instructions
+
+### Building
+Requires [Boost](http://www.boost.org/).
+In the root directory,
+type
+```
+mkdir _build
+cd _build
+cmake ..
+```
+Then, depending on your OS, type `make` or open the project in Visual Studio.
+
+### Running
 Takes a command-line argument which is the file to read from.
 
 

@@ -19,7 +19,7 @@ int main(int argc, char ** argv)
 		return 1;
 	}
 
-	cout << "Howdy" << endl;
+	cout << "Howdy!" << endl;
 	cout << "The file input was " << argv[1] << ".\n" << endl;
 	string filename = argv[1];
 
