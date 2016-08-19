@@ -1,18 +1,6 @@
 #ifndef UTILITY_H
 #define UTILITY_H
 
-#include <string>
-#include <sstream>
-#include <vector>
-#include <stdexcept>
-#include <stdlib.h>
-#include <algorithm> 
-#include <functional> 
-#include <cctype>
-#include <locale>
-#include <time.h>
-#include <regex>
-
 namespace utility
 {
 
