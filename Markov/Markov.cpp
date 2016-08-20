@@ -9,14 +9,6 @@
 namespace matt 
 {
 
-/**
-* Constructor for Markov object.
-*
-* @param string input The string to use as an
-* initial state.
-* @param int ord The order of the Markov Chain.
-* Defaults to 1.
-*/
 Markov::Markov(std::string input, int ord): 
 	order(ord)
 {	
@@ -32,6 +24,7 @@ Markov::Markov(std::string input, int ord):
 		std::string combined = utility::combine(strings, ord, i);
 		// Trim the string.
 		boost::trim_right(combined);
+		// Add the string to the chain and map it to a vector of following strings.
 		chain.insert(std::pair<std::string, std::vector< std::string> >(combined, std::vector<std::string>()));
 		if (i+ord < strings.size())
 			chain[combined].push_back(strings[i + ord]);
@@ -40,6 +33,11 @@ Markov::Markov(std::string input, int ord):
 
 Markov::~Markov()
 {
+}
+
+void Markov::add_input(std::string input)
+{
+	input = utility::strip(input);
 }
 
 std::string Markov::generate()
