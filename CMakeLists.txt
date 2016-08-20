@@ -30,13 +30,21 @@ target_link_libraries(Main Markov Utility ${Boost_LIBRARIES} ${PYTHON_LIBRARIES}
 
 # Create the python module.
 PYTHON_ADD_MODULE(markovp ${FILES_DIR}/python.cpp)
+# Uncomment to copy the web directory over to the build directory.
+#[[
 add_custom_command(
   TARGET markovp
   POST_BUILD
   COMMAND ${CMAKE_COMMAND} -E copy_directory ${PROJECT_SOURCE_DIR}/web $<TARGET_FILE_DIR:markovp>
 )
+]]
 
 # Link it with the required libraries.
 target_link_libraries(markovp Markov Utility ${Boost_LIBRARIES} ${PYTHON_LIBRARIES})
 
-#FILE(COPY ${PROJECT_SOURCE_DIR}/web/main.py DESTINATION ${PROJECT_SOURCE_DIR}/_build)
+# Build the markovp library in the web directory.
+set_target_properties(
+  markovp
+  PROPERTIES
+  LIBRARY_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/web
+)

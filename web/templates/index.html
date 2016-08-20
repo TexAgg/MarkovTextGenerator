@@ -1,8 +1,12 @@
-{% include 'header.html' %}
+{% extends "layout.html" %}
 
+{% block content %}
 <div class="container">
-	<!-- Form stuff here. -->
-	<form id="myForm" method="post" action="">
+	<!-- 
+		Form stuff here.
+		http://www.tutorialspoint.com/flask/flask_wtf.htm 
+	-->
+	<form id="myForm" method="get" action="">
 		<div class="form-group">
 			<textarea class="form-control" rows="20" cols="60" name="inputText">
 			</textarea>
@@ -10,5 +14,4 @@
 		<button type="submit" name="Submit" class="btn btn-default">Go!</button>
 	</form>
 </div><!--.container-->
-
-{% include 'footer.html' %}
+{% endblock %}
