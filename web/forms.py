@@ -5,5 +5,4 @@ class Markov_Form(Form):
 #{
 	input_text = TextAreaField("Input text:", id = "inputText")
 	submit_button = SubmitField("Submit")
-	#submit_button = BooleanField("Submit", [validators.DataRequired()])
 #}

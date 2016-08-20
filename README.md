@@ -18,13 +18,21 @@ cmake ..
 Then, depending on your OS, type `make` or open the project in Visual Studio.
 
 ### Running
+
+#### Command Line App
 Takes a command-line argument which is the file to read from.
+
+#### Web App
+In the `web` directory,
+```
+python main.py
+```
+and open your browser to whichever location it tells you to.
 
 ---
 
 ## Todo
 1. Support cases other than order 1.
-2. GUI
 
 ---
 
@@ -41,3 +49,4 @@ Takes a command-line argument which is the file to read from.
 
 ### Python
 * [Flask tutorial](http://code.tutsplus.com/tutorials/creating-a-web-app-from-scratch-using-python-flask-and-mysql--cms-22972)
+* [WTForms tutorial](http://www.tutorialspoint.com/flask/flask_wtf.htm)
