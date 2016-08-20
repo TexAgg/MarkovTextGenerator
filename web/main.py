@@ -47,7 +47,7 @@ if __name__ == "__main__":
 #}
 
 # Test the Markov generator.
-filename = "../Markov/text/nodejs.txt"
-f = open(filename, 'r')
-mark = Markov(f.read(), 1)
-print(mark.generate())
+#filename = "../Markov/text/nodejs.txt"
+#f = open(filename, 'r')
+#mark = Markov(f.read(), 1)
+#print(mark.generate())
