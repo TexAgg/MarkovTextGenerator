@@ -5,5 +5,8 @@
 	<textarea class="form-control" rows="20" cols="60" readonly>
 		{{ output }}
 	</textarea>
+	<button class='btn btn-default' id='reset' onclick="reset_button_clicked()">Reset</button>
+	<script type='text/javascript' src="{{ url_for('static', filename='js/main.js') }}"></script>
+	<br></br>
 </div>
 {% endblock %}

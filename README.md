@@ -38,7 +38,7 @@ and open your browser to whichever location it tells you to.
 
 ## Resources
 * A clone of this written in [PHP](https://bitbucket.org/gaikema/markovbot).
-* `markovp.so` [download]](https://bitbucket.org/gaikema/markovtextgenerator/downloads).
+* `markovp.so` [download](https://bitbucket.org/gaikema/markovtextgenerator/downloads).
 
 ### Markov Text Generators
 * [Summary](http://stackoverflow.com/questions/4081662/explain-markov-chain-algorithm-in-laymans-terms)

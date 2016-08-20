@@ -13,7 +13,7 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 
 	<!-- http://stackoverflow.com/questions/22259847/application-not-picking-up-css-file-flask-python -->
-	<link rel='stylesheet' type='text/css' href= "{{ url_for('static',filename='main.css') }}"></link>
+	<link rel='stylesheet' type='text/css' href= "{{ url_for('static', filename='css/main.css') }}"></link>
 </head>
 <body>
 	<div class="jumbotron">
@@ -24,7 +24,7 @@
 	{% block content %}
 	{% endblock %}
 	</div>
-	
+
 	<footer>
 		<a href="http://mattgaikema.com/">Matt Gaikema</a> 2016
 	</footer>
