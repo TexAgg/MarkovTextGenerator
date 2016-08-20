@@ -67,6 +67,9 @@ bool check_sentence_end(std::string str)
 		return false;
 }
 
+/**
+* Strip input of special characters and replace them with spaces.
+*/
 std::string strip(std::string str)
 {
 	std::regex reg(" +|\n|\r|\f");
