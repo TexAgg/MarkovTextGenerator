@@ -12,32 +12,58 @@ namespace matt
 Markov::Markov(std::string input, int ord): 
 	order(ord)
 {	
-	input_text = utility::strip(input);
+	input_texts.push_back(utility::strip(input));
+	// Create a vector of all the words.
 	std::vector<std::string> strings;
 	// http://stackoverflow.com/questions/5607589/right-way-to-split-an-stdstring-into-a-vectorstring
 	boost::split(strings, input, boost::is_any_of(", "), boost::token_compress_on);
+	// Arbitrarily set the limit to the number of words in the input text.
 	limit = strings.size();
 
 	// Get frequencies.
 	for (int i = 0; i < strings.size()-ord+1; i++)
 	{
+		// Combine ord elements of strings, starting at i.
 		std::string combined = utility::combine(strings, ord, i);
 		// Trim the string.
 		boost::trim_right(combined);
 		// Add the string to the chain and map it to a vector of following strings.
 		chain.insert(std::pair<std::string, std::vector< std::string> >(combined, std::vector<std::string>()));
-		if (i+ord < strings.size())
+		// Avoid range errors.
+		if (i + ord < strings.size())
+		{
+			// Push back the string ord words ahead of i.
 			chain[combined].push_back(strings[i + ord]);
+		}
 	}
 }
 
 Markov::~Markov()
 {
+	// No pointers are used so this doesn't need to be finished.
 }
 
 void Markov::add_input(std::string input)
 {
 	input = utility::strip(input);
+	input_texts.push_back(input);
+
+	// Split the new string into a vector of strings.
+	std::vector<std::string> strings;
+	boost::split(strings, input, boost::is_any_of(", "), boost::token_compress_on);
+
+	// Add each element to the frequency table.
+	// TODO: Rewrite the loop as a private function?
+	for (int i = 0; i < strings.size()-ord+1; i++)
+	{
+		std::string combined = utility::combine(strings, ord, i);
+		boost::trim_right(combined);
+
+		if (i + ord < strings.size())
+		{
+			chain[combined].push_back(strings[i + ord]);
+		}
+	}
 }
 
 std::string Markov::generate()

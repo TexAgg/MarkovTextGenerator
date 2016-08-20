@@ -12,16 +12,16 @@ namespace matt
 
 class Markov
 {
-	// Number of words.
+	/** Number of words to use as current state. */
 	int order;
-	// The input text.
-	std::string input_text;
+	/** A vector of all the input texts. */
+	std::vector<std::string> input_texts;
 	/**
 	* A map of strings to a vector of strings.
 	* Also, the frequency table.
 	*/
 	std::map<std::string, std::vector<std::string>> chain;
-	// Maximum number of words, to prevent infinite loops.
+	/** Maximum number of words, to prevent infinite loops. */
 	int limit;
 
 public:
@@ -39,7 +39,7 @@ public:
 
 	void add_input(std::string input);
 
-	// Create output.
+	/** Create output. */
 	std::string generate();
 
 }; // !Markov class
