@@ -1,6 +1,6 @@
 # Markov Text Generator
-A Markov text generator.
-This was supposed to be a quick personal project but it ended up taking way too long.
+A [Markov](https://en.wikipedia.org/wiki/Markov_chain) text generator.
+Takes in input and produces realistic seeming gibberish.
 
 ---
 
@@ -22,6 +22,8 @@ Then, depending on your OS, type `make` or open the project in Visual Studio.
 #### Command Line App
 The command line app is called `Main`,
 and it takes a command-line argument which is the file to read from.
+`libMarkov.so`, and `libUtility.so` must be built,
+as they are shared libraries.
 
 #### Web App
 In the `web` directory,

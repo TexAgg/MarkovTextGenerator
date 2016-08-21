@@ -1,4 +1,7 @@
+# Build directory.
 /_build
+# Text editor folder.
 /.vscode
+# Python binaries.
 *.so
 *.pyc
