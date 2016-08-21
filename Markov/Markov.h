@@ -41,6 +41,14 @@ public:
 	
 	/** Add an additional text to analyze. */
 	void add_input(std::string input);
+	/** 
+	* Create output roughly lim words long.
+	* For some reason it isn't exact,
+	* which needs to be fixed.
+	* 
+	* @param int lim The length of the output.
+	*/	
+	std::string generate(int lim);
 	/** Create output. */
 	std::string generate();
 

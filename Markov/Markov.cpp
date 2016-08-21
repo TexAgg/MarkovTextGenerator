@@ -66,8 +66,10 @@ void Markov::add_input(std::string input)
 	}
 }
 
-std::string Markov::generate()
+std::string Markov::generate(int lim)
 {
+	limit = lim;
+	
 	std::string output;
 	srand(time(NULL));
 
@@ -103,13 +105,25 @@ std::string Markov::generate()
 		output += " " + elem;
 		// http://stackoverflow.com/a/11765524/5415895
 		if (!chain.count(elem)) 
+		{
+			// Break if the word has nothing following it.
 			break;
+		}
 		i++;
 		if (i == limit)
+		{
+			// Break if we have reached the limit.
 			break;
+		}
 	}
 
 	return output;
+}
+
+std::string Markov::generate()
+{
+	// Pass the default value: the member variable.
+	return Markov::generate(limit);
 }
 
 } // !Namespace matt
