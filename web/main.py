@@ -1,6 +1,5 @@
 from markovp import Markov
 from forms import Markov_Form
-import os
 from flask import Flask, render_template, request, redirect, url_for
 
 app = Flask(__name__)
@@ -51,3 +50,4 @@ if __name__ == "__main__":
 #f = open(filename, 'r')
 #mark = Markov(f.read(), 1)
 #print(mark.generate())
+#f.close()

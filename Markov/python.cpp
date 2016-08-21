@@ -18,5 +18,6 @@ BOOST_PYTHON_MODULE(markovp)
 		Only the public methods need to be exposed.
 	*/
 	class_<matt::Markov>("Markov", init<std::string, int>())
-		.def("generate", &matt::Markov::generate);
+		.def("generate", &matt::Markov::generate)
+		.def("add_input", &matt::Markov::add_input);
 }

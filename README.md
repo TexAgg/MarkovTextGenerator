@@ -20,7 +20,8 @@ Then, depending on your OS, type `make` or open the project in Visual Studio.
 ### Running
 
 #### Command Line App
-Takes a command-line argument which is the file to read from.
+The command line app is called `Main`,
+and it takes a command-line argument which is the file to read from.
 
 #### Web App
 In the `web` directory,
@@ -28,6 +29,8 @@ In the `web` directory,
 python main.py
 ```
 and open your browser to whichever location it tells you to.
+In order to run `main.py`, 
+`markovp.so`, `libMarkov.so`, and `libUtility.so` must be built.
 
 ---
 
@@ -38,7 +41,7 @@ and open your browser to whichever location it tells you to.
 
 ## Resources
 * A clone of this written in [PHP](https://bitbucket.org/gaikema/markovbot).
-* `markovp.so` [download](https://bitbucket.org/gaikema/markovtextgenerator/downloads).
+* Libraries [download](https://bitbucket.org/gaikema/markovtextgenerator/downloads).
 
 ### Markov Text Generators
 * [Summary](http://stackoverflow.com/questions/4081662/explain-markov-chain-algorithm-in-laymans-terms)

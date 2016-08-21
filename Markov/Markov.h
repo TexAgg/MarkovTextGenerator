@@ -12,6 +12,8 @@ namespace matt
 
 class Markov
 {
+private:
+
 	/** Number of words to use as current state. */
 	int order;
 	/** A vector of all the input texts. */
@@ -36,9 +38,9 @@ public:
 	*/
 	Markov(std::string input, int ord=1);
 	~Markov();
-
+	
+	/** Add an additional text to analyze. */
 	void add_input(std::string input);
-
 	/** Create output. */
 	std::string generate();
 

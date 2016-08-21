@@ -9,6 +9,8 @@
 #include <locale>
 #include <time.h>
 #include <regex>
+#include <sstream>
+#include <fstream>
 
 #include "Utility.h"
 
@@ -56,6 +58,15 @@ std::string strip(std::string str)
 	std::regex reg(" +|\n|\r|\f");
 	std::string output = std::regex_replace(str, reg, " ");
 	return output;
+}
+
+std::string file_to_string(std::string filename)
+{
+	// http://stackoverflow.com/a/2602258/5415895
+	std::ifstream infile(filename);
+	std::stringstream buffer;
+	buffer << infile.rdbuf();
+	return buffer.str();
 }
 
 }

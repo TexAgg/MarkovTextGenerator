@@ -21,10 +21,10 @@ Markov::Markov(std::string input, int ord):
 	limit = strings.size();
 
 	// Get frequencies.
-	for (int i = 0; i < strings.size()-ord+1; i++)
+	for (int i = 0; i < strings.size()-order + 1; i++)
 	{
 		// Combine ord elements of strings, starting at i.
-		std::string combined = utility::combine(strings, ord, i);
+		std::string combined = utility::combine(strings, order, i);
 		// Trim the string.
 		boost::trim_right(combined);
 		// Add the string to the chain and map it to a vector of following strings.
@@ -33,7 +33,7 @@ Markov::Markov(std::string input, int ord):
 		if (i + ord < strings.size())
 		{
 			// Push back the string ord words ahead of i.
-			chain[combined].push_back(strings[i + ord]);
+			chain[combined].push_back(strings[i + order]);
 		}
 	}
 }
@@ -54,14 +54,14 @@ void Markov::add_input(std::string input)
 
 	// Add each element to the frequency table.
 	// TODO: Rewrite the loop as a private function?
-	for (int i = 0; i < strings.size()-ord+1; i++)
+	for (int i = 0; i < strings.size() - order + 1; i++)
 	{
-		std::string combined = utility::combine(strings, ord, i);
+		std::string combined = utility::combine(strings, order, i);
 		boost::trim_right(combined);
 
-		if (i + ord < strings.size())
+		if (i + order < strings.size())
 		{
-			chain[combined].push_back(strings[i + ord]);
+			chain[combined].push_back(strings[i + order]);
 		}
 	}
 }

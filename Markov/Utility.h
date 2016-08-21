@@ -38,6 +38,8 @@ bool check_sentence_end(std::string str);
 */
 std::string strip(std::string str);
 
+std::string file_to_string(std::string filename);
+
 }
 
 #endif // !UTILITY_H
