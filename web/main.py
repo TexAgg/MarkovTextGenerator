@@ -1,6 +1,6 @@
 from markovp import Markov
 from forms import Markov_Form
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, jsonify, make_response
 
 app = Flask(__name__)
 app.secret_key = 'development key'
@@ -42,7 +42,8 @@ def submit():
     #}
 #}
 
-@app.rout("/api", method=["GET"])
+# A REST method.
+@app.route("/api", methods=["GET"])
 def api():
 #{
     # Get GET args.
@@ -50,6 +51,14 @@ def api():
     mark = Markov(str(input_text), 1)
     
     return mark.generate()
+#}
+
+# Handle errors.
+# http://blog.miguelgrinberg.com/post/designing-a-restful-api-with-python-and-flask
+@app.errorhandler(404)
+def not_found(error):
+#{
+    return make_response(jsonify({'error': 'Not found'}), 404)
 #}
 
 if __name__ == "__main__":
