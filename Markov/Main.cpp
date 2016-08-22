@@ -8,6 +8,10 @@
 #include "Markov.h"
 #include "Utility.h"
 
+/**
+* TODO: Accept command-line arguments.
+* http://www.cplusplus.com/articles/DEN36Up4/
+*/
 int main(int argc, char ** argv) 
 {
 	if (argc < 2) 

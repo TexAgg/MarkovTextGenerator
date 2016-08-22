@@ -39,8 +39,15 @@ std::string get_first_word(std::string str)
 
 std::string array_rand(std::vector<std::string> vec)
 {
-	int rank = rand() % vec.size();
-	return vec[rank];
+	// Avoid floating point error.
+	// http://stackoverflow.com/questions/4236853/floating-point-exception-c-why-and-what-is-it
+	if (vec.size() == 0)
+		return "";
+	else
+	{
+		int rank = rand() % vec.size();
+		return vec[rank];
+	}
 }
 
 bool check_sentence_end(std::string str)

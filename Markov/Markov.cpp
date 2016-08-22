@@ -9,6 +9,7 @@
 namespace matt 
 {
 
+// TODO: Fix floating point exception on 1 or 0 length input.
 Markov::Markov(std::string input, int ord): 
 	order(ord)
 {	

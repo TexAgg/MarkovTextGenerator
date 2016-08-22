@@ -5,6 +5,7 @@ from flask import Flask, render_template, request, redirect, url_for
 app = Flask(__name__)
 app.secret_key = 'development key'
 
+# Index.
 @app.route("/")
 def index():
 #{
@@ -12,6 +13,7 @@ def index():
     return render_template('form.html', form = form)
 #}
 
+# The submission page.
 @app.route("/submit", methods=["GET"])
 def submit():
 #{
@@ -38,6 +40,16 @@ def submit():
     #{
         return redirect(url_for('index'))
     #}
+#}
+
+@app.rout("/api", method=["GET"])
+def api():
+#{
+    # Get GET args.
+    input_text = request.args.get('input_text')
+    mark = Markov(str(input_text), 1)
+    
+    return mark.generate()
 #}
 
 if __name__ == "__main__":
