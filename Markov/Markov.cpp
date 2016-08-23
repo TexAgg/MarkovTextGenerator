@@ -92,7 +92,7 @@ std::string Markov::generate(int lim)
 	output = elem;
 
 	// 2. Select a random element from the vector elem.second.
-	elem = utility::array_rand(chain.at(elem));
+	elem = utility::array_rand(chain[elem]);
 
 	// 3. Append this to the output string.
 	output += " " + elem;
@@ -100,9 +100,9 @@ std::string Markov::generate(int lim)
 	// 4. Change elem to the random element from elem.second.
 	// 5. Continue until the size of elem.second == 0.
 	int i = 0;
-	while (chain.at(elem).size() != 0)
+	while (chain[elem].size() != 0)
 	{
-		elem = utility::array_rand(chain.at(elem));
+		elem = utility::array_rand(chain[elem]);
 		output += " " + elem;
 		// http://stackoverflow.com/a/11765524/5415895
 		if (!chain.count(elem)) 

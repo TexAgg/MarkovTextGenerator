@@ -28,7 +28,7 @@ def submit():
             mark = Markov(str(text), 1)
             output = mark.generate()
 
-            return render_template("output.html", output = output)
+            return render_template("output.html", input = str(text), output = output)
         #}
         else:
         #{

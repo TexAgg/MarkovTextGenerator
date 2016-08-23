@@ -3,12 +3,22 @@
 {% block content %}
 <div class="container">
 	<div class='form-group'>
-	<textarea class="form-control" rows="20" cols="60" readonly>
-		{{ output }}
-	</textarea>
+		<label for='original-input'>Your input:</label>
+		<textarea id='original-input' class='form-control' rows='15' cols='60' readonly>
+			{{ input }}
+		</textarea>
 	</div>
-	<button class='btn btn-default' id='reset' onclick="reset_button_clicked()">Reset</button>
-	<script type='text/javascript' src="{{ url_for('static', filename='js/main.js') }}"></script>
+	<br></br>
+	<div class='form-group'>
+		<label for='markov-output'>Result:</label>
+		<textarea id='markov-output' class="form-control" rows="20" cols="60" readonly>
+			{{ output }}
+		</textarea>
+	</div>
+	<div>
+		<button class='btn btn-default' id='reset' onclick="reset_button_clicked()">Reset</button>
+		<script type='text/javascript' src="{{ url_for('static', filename='js/main.js') }}"></script>
+	</div>
 	<br></br>
 </div>
 {% endblock %}
