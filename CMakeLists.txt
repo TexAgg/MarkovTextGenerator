@@ -16,7 +16,10 @@ FIND_PACKAGE(PythonInterp)
 FIND_PACKAGE(PythonLibs)
 find_package(Boost 1.58 REQUIRED python)
 include_directories(${Boost_INCLUDE_DIRS} ${PYTHON_INCLUDE_DIRS})
-#LINK_LIBRARIES(${Boost_LIBRARIES} ${PYTHON_LIBRARIES})
+
+#############
+# Libraries #
+#############
 
 # These libraries must be shared, in order to be used by the python module.
 add_library(Utility SHARED ${FILES_DIR}/Utility.cpp ${FILES_DIR}/Utility.h)

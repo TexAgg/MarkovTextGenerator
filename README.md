@@ -28,10 +28,10 @@ as they are shared libraries.
 #### Web App
 In the `web` directory,
 ```
-python main.py
+python server.py
 ```
 and open your browser to whichever location it tells you to.
-In order to run `main.py`, 
+In order to run `server.py`, 
 `markovp.so`, `libMarkov.so`, and `libUtility.so` must be built.
 
 ---

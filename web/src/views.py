@@ -2,8 +2,7 @@ from markovp import Markov
 from forms import Markov_Form
 from flask import Flask, render_template, request, redirect, url_for, jsonify, make_response
 
-app = Flask(__name__)
-app.secret_key = 'development key'
+from src import app
 
 # Index.
 @app.route("/")
@@ -59,11 +58,6 @@ def api():
 def not_found(error):
 #{
     return make_response(jsonify({'error': 'Not found'}), 404)
-#}
-
-if __name__ == "__main__":
-#{ 
-    app.run()
 #}
 
 # Test the Markov generator.
