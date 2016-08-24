@@ -14,6 +14,8 @@
 
 #include "Utility.h"
 
+namespace matt 
+{
 namespace utility
 {
 
@@ -76,4 +78,5 @@ std::string file_to_string(std::string filename)
 	return buffer.str();
 }
 
-}
+} // !namespace utility
+} // !namespace matt
