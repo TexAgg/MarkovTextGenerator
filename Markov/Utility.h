@@ -3,7 +3,7 @@
 
 #include <string>
 
-namespace matt
+namespace markov
 {
 namespace utility
 {
@@ -43,6 +43,6 @@ std::string strip(std::string str);
 std::string file_to_string(std::string filename);
 
 } // !namespace utility
-} // !namespace matt
+} // !namespace markov
 
 #endif // !UTILITY_H

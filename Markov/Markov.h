@@ -7,7 +7,7 @@
 
 #include "Utility.h"
 
-namespace matt 
+namespace markov 
 {
 
 class Markov
@@ -54,6 +54,6 @@ public:
 
 }; // !Markov class
 
-} // !Namespace matt
+} // !Namespace markov
 
 #endif // !MARKOV_H

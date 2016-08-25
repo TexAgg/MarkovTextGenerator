@@ -14,7 +14,7 @@
 
 #include "Utility.h"
 
-namespace matt 
+namespace markov 
 {
 namespace utility
 {
@@ -79,4 +79,4 @@ std::string file_to_string(std::string filename)
 }
 
 } // !namespace utility
-} // !namespace matt
+} // !namespace markov

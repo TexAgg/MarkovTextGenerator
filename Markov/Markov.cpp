@@ -6,7 +6,7 @@
 
 #include "Markov.h"
 
-namespace matt 
+namespace markov 
 {
 
 // TODO: Fix floating point exception on 1 or 0 length input.
@@ -127,4 +127,4 @@ std::string Markov::generate()
 	return Markov::generate(limit);
 }
 
-} // !Namespace matt
+} // !Namespace markov

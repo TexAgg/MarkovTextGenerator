@@ -25,9 +25,9 @@ int main(int argc, char ** argv)
 	std::cout << "The file input was " << argv[1] << ".\n" << std::endl;
 	std::string filename = argv[1];
 
-	std::string str = matt::utility::file_to_string(filename);
+	std::string str = markov::utility::file_to_string(filename);
 	//std::cout << str;
 
-	matt::Markov mark = matt::Markov(str,1);
+	markov::Markov mark = markov::Markov(str,1);
 	std::cout << mark.generate() << std::endl;
 }

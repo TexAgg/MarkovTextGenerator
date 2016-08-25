@@ -24,5 +24,7 @@ FIND_PACKAGE(PythonLibs)
 find_package(Boost 1.58 REQUIRED python)
 include_directories(${Boost_INCLUDE_DIRS} ${PYTHON_INCLUDE_DIRS})
 
+include_directories(${PROJECT_SOURCE_DIR})
+
 # Add Markov subdirectory.
 add_subdirectory(${FILES_DIR})
