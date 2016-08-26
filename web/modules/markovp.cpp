@@ -7,7 +7,7 @@
 
 #include <boost/python.hpp>
 
-#include "Markov.h"
+#include <Markov/Markov.h>
 
 // Create a Python module named markovp (MarkovPython).
 BOOST_PYTHON_MODULE(markovp) 

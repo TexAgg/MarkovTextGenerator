@@ -7,7 +7,7 @@ Takes in input and produces realistic seeming gibberish.
 ## Instructions
 
 ### Building
-Requires [Boost](http://www.boost.org/).
+Requires [Boost](http://www.boost.org/) and [cpprest](https://github.com/Microsoft/cpprestsdk).
 In the root directory,
 type
 ```

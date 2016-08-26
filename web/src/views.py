@@ -1,5 +1,6 @@
 from markovp import Markov
 from forms import Markov_Form
+from buzzfeed import get_titles
 from flask import Flask, render_template, request, redirect, url_for, jsonify, make_response
 
 from src import app
@@ -39,6 +40,13 @@ def submit():
     #{
         return redirect(url_for('index'))
     #}
+#}
+
+@app.route("/buzzfeed")
+def buzzfeed():
+#{
+    titles = get_titles()
+    return titles
 #}
 
 # A REST method.

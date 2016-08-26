@@ -1,0 +1,17 @@
+# I realize using Python to make simple HTTP requests makes more sense than using C++.
+# I decided to write this module in C++ instead,
+# mostly because I am more comfortable with C++ and like it more.
+# Plus maybe it's faster? Who knows.
+
+import requests
+import json
+
+def gget_titles():
+#{
+	url = "http://www.buzzfeed.com/api/v2/feeds/news"
+	r = requests.get(url)
+	#j = json.load(r.text)
+
+	# temp
+	return r.text
+#}
