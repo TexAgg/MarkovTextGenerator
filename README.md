@@ -7,7 +7,9 @@ Takes in input and produces realistic seeming gibberish.
 ## Instructions
 
 ### Building
-Requires [Boost](http://www.boost.org/) and [cpprest](https://github.com/Microsoft/cpprestsdk).
+Requires [Boost](http://www.boost.org/),
+[cpprest](https://github.com/Microsoft/cpprestsdk),
+and [json](https://github.com/nlohmann/json).
 In the root directory,
 type
 ```
@@ -51,6 +53,10 @@ In order to run `server.py`,
 
 ### C++
 * [Maps](http://www.cplusplus.com/reference/map/map/)
+
+### cpprest
+* [Source and homepage](https://github.com/Microsoft/cpprestsdk)
+* [Documentation](http://microsoft.github.io/cpprestsdk/index.html)
 
 ### Python
 * [Flask tutorial](http://code.tutsplus.com/tutorials/creating-a-web-app-from-scratch-using-python-flask-and-mysql--cms-22972)

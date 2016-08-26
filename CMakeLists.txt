@@ -36,8 +36,11 @@ include_directories(${Boost_INCLUDE_DIRS} ${PYTHON_INCLUDE_DIRS})
 include_directories("/usr/local/lib/casablanca/Release/include")
 link_directories("/usr/local/lib/casablanca/Release/build.release/Binaries")
 
-include_directories(usr/local/lib/casablanca)
+include_directories(/usr/local/lib/casablanca)
 
-# Add Markov subdirectory.
+######################
+# Add subdirectories #
+######################
+
 add_subdirectory(${MARKOV_DIR})
 add_subdirectory(${WEB_DIR}/modules)

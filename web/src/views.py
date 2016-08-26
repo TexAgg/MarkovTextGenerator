@@ -1,7 +1,8 @@
 from markovp import Markov
 from forms import Markov_Form
-from buzzfeed import get_titles
+from buzzfeed import get_feed
 from flask import Flask, render_template, request, redirect, url_for, jsonify, make_response
+import json
 
 from src import app
 
@@ -45,8 +46,12 @@ def submit():
 @app.route("/buzzfeed")
 def buzzfeed():
 #{
-    titles = get_titles()
-    return titles
+    feed = get_feed()
+    j_feed = json.loads(feed)
+    # http://stackoverflow.com/questions/7271482/python-getting-a-list-of-value-from-list-of-dict
+    titles = [d['title'] for d in j_feed['big_stories']]
+    
+    return json.dumps(titles)
 #}
 
 # A REST method.

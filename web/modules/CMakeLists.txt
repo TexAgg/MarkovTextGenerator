@@ -17,6 +17,9 @@ add_custom_command(
 # Create the buzzfeed python module.
 PYTHON_ADD_MODULE(buzzfeed ${WEB_DIR}/modules/buzzfeed.cpp)
 
+# http://stackoverflow.com/a/19467550/5415895
+target_include_directories(buzzfeed PUBLIC /usr/local/lib/json-2.0.2/src)
+
 # ALWAYS link with ${Boost_LIBRARIES} and ${PYTHON_LIBRARIES} when wrapping C++ for Python.
 target_link_libraries(buzzfeed cpprest ${Boost_LIBRARIES} ${PYTHON_LIBRARIES})
 add_custom_command(
