@@ -28,3 +28,10 @@ for fl in glob.glob(project_dir + "/web/src/*.pyc"):
 	print "Removing " + fl
 	os.remove(fl)
 #}
+
+# Remove *.pyc files in web/src/views directory.
+for fl in glob.glob(project_dir + "/web/src/views/*.pyc"):
+#{
+	print "Removing " + fl
+	os.remove(fl)
+#}

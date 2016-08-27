@@ -1,0 +1,19 @@
+# The main router for the web app.
+# This file is disgusting and unorganized.
+
+from markovp import Markov
+from forms import Markov_Form
+from buzzfeed import get_feed, get_titles
+from flask import Flask, render_template, request, redirect, url_for, jsonify, make_response
+import json
+
+from src import app
+
+
+
+# Test the Markov generator.
+#filename = "../Markov/text/nodejs.txt"
+#f = open(filename, 'r')
+#mark = Markov(f.read(), 1)
+#print(mark.generate())
+#f.close()
