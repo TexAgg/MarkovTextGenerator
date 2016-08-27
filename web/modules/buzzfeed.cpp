@@ -1,11 +1,14 @@
 #include <string>
+#include <iostream>
 
 #include <boost/python.hpp>
+#include <boost/python/list.hpp>
 
 #include <cpprest/http_client.h>
 #include <cpprest/filestream.h>
 #include <cpprest/json.h>
 
+// This file is over 10,000 lines long and makes compilation slow.
 #include <json.hpp>
 
 namespace buzzfeed
@@ -14,6 +17,8 @@ namespace buzzfeed
 /**
 * Returns a string representation of the JSON news feed
 * from the Buzzfeed API.
+*
+* @return std:string A JSON encoded string containing the entire news feed.
 */
 std::string get_feed()
 {
@@ -29,12 +34,26 @@ std::string get_feed()
 	return body;
 }
 
-// Deprecated I guess.
-void get_titles()
+/**
+* Iterates through get_feed to return the titles of all the articles.
+*/
+boost::python::list get_titles()
 {
 	nlohmann::json j = nlohmann::json::parse(get_feed());
 
+	//std::vector<std::string> titles;
+	boost::python::list titles;
+
 	// Iterate through j and get all values with key 'title'.
+	for (nlohmann::json::iterator it = j["big_stories"].begin(); it != j["big_stories"].end(); it++)
+	{
+		std::string temp = it->at("title");
+		// Uncomment for debugging.
+		//std::cout << temp << std::endl;
+		titles.append(temp);
+	}
+
+	return titles;
 }
 
 } // !buzzfeed
@@ -45,4 +64,5 @@ BOOST_PYTHON_MODULE(buzzfeed)
 	using namespace boost::python;
 
 	def("get_feed", &buzzfeed::get_feed);
+	def("get_titles", &buzzfeed::get_titles);
 }

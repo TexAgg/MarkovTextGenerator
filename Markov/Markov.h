@@ -36,7 +36,7 @@ public:
 	* @param int ord The order of the Markov Chain.
 	* Defaults to 1.
 	*/
-	Markov(std::string input, int ord=1);
+	Markov(std::string input = " ", int ord = 1);
 	~Markov();
 	
 	/** Add an additional text to analyze. */
