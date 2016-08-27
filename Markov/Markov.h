@@ -23,8 +23,10 @@ private:
 	* Also, the frequency table.
 	*/
 	std::map<std::string, std::vector<std::string>> chain;
-	/** Maximum number of words, to prevent infinite loops. */
+	/** Maximum number of words generated, to prevent infinite loops. */
 	int limit;
+	// All of the possible strings to start the generated text with.
+	std::vector<std::string> start_points;
 
 public:
 

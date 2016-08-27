@@ -18,6 +18,10 @@ Markov::Markov(std::string input, int ord):
 	std::vector<std::string> strings;
 	// http://stackoverflow.com/questions/5607589/right-way-to-split-an-stdstring-into-a-vectorstring
 	boost::split(strings, input, boost::is_any_of(", "), boost::token_compress_on);
+	// Add first word to vector of possible starting points.
+	if (strings.size())
+		start_points.push_back(strings[0]);
+
 	// Arbitrarily set the limit to the number of words in the input text.
 	limit = strings.size();
 
@@ -52,6 +56,9 @@ void Markov::add_input(std::string input)
 	// Split the new string into a vector of strings.
 	std::vector<std::string> strings;
 	boost::split(strings, input, boost::is_any_of(", "), boost::token_compress_on);
+	// Add first word to vector of possible starting points.
+	if (strings.size())
+		start_points.push_back(strings[0]);
 
 	// Add each element to the frequency table.
 	// TODO: Rewrite the loop as a private function?
@@ -88,7 +95,8 @@ std::string Markov::generate(int lim)
 	*/
 
 	// 1. Get random starting point from chain, elem.
-	std::string elem = chain.begin()->first;
+	//std::string elem = chain.begin()->first;
+	std::string elem = utility::array_rand(start_points);
 	output = elem;
 
 	// 2. Select a random element from the vector elem.second.

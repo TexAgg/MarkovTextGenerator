@@ -34,7 +34,7 @@ python server.py
 ```
 and open your browser to whichever location it tells you to.
 In order to run `server.py`, 
-`markovp.so`, `libMarkov.so`, and `libUtility.so` must be built.
+all the libraries must be built.
 
 ---
 

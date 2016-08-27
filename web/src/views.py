@@ -1,3 +1,6 @@
+# The main router for the web app.
+# This file is disgusting and unorganized.
+
 from markovp import Markov
 from forms import Markov_Form
 from buzzfeed import get_feed, get_titles
@@ -58,8 +61,8 @@ def buzzfeed():
     for item in titles:
         mark.add_input(item)
 
-    return mark.generate(20)
-    #return "\n".join(titles)
+    # Arbitrarily limit the length of the headline to 30 words.
+    return mark.generate(30)
 #}
 
 # A REST method.
