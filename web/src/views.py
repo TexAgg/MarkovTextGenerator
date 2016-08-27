@@ -7,6 +7,11 @@ from buzzfeed import get_feed, get_titles
 from flask import Flask, render_template, request, redirect, url_for, jsonify, make_response
 import json
 
+# http://stackoverflow.com/a/21190382/5415895
+import sys  
+reload(sys)  
+sys.setdefaultencoding('utf8')
+
 from src import app
 
 # Index.
@@ -46,6 +51,7 @@ def submit():
     #}
 #}
 
+# Display Markovishly generated buzzfeed titles.
 @app.route("/buzzfeed")
 def buzzfeed():
 #{
@@ -62,7 +68,7 @@ def buzzfeed():
         mark.add_input(item)
 
     # Arbitrarily limit the length of the headline to 30 words.
-    return mark.generate(30)
+    return render_template("buzzfeed.html", generated_title = mark.generate(30))
 #}
 
 # A REST method.
