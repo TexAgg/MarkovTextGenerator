@@ -2,3 +2,4 @@ flask
 wtforms
 flask_wtf
 requests
+Flask-Navigation

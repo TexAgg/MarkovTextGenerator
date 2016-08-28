@@ -3,6 +3,11 @@
 	margin-bottom: 0;
 }
 
+#buzzfeed-display_title
+{
+    width: 50%;
+}
+
 footer
 {
 	font-size: 0.75em;

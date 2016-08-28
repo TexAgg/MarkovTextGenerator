@@ -6,7 +6,7 @@
 import requests
 import json
 
-def gget_titles():
+def get_titles():
 #{
 	url = "http://www.buzzfeed.com/api/v2/feeds/news"
 	r = requests.get(url)

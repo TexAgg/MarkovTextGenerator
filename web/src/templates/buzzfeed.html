@@ -2,8 +2,15 @@
 
 {% block content %}
 
-<p>
-	{{ generated_title }}
-</p>
+<div>
+	<h4>
+		Refresh the page to get a randomly generated Buzzfeed title.
+	</h4>
+</div>
+<div class="well" id='buzzfeed-display_title'>
+	<p>
+		{{ generated_title }}
+	</p>
+</div>
 
 {% endblock %}

@@ -33,15 +33,18 @@
 		</div><!--navbar-header-->
 		<div id="navbar" class="navbar-collapse collapse">
 			<ul class="nav nav-tabs">
-				<li role="presentation"><a href="/">Markov Text Generator</a></li>
-				<li role="presentation"><a href="/buzzfeed">Buzzfeed Titles</a></li>
+				{% for item in nav.top %}
+				<li role='presentation' class="{{ 'active' if item.is_active else '' }}">
+					<a href="{{ item.url }}">{{ item.label }}</a>
+				</li>
+				{% endfor %}
 			</ul>
 		</div><!--navbar-collapse-->
 	</nav>
 
-	<div id='main-wrapper'>
-	{% block content %}
-	{% endblock %}
+	<div id='main-wrapper' class='container'>
+		{% block content %}
+		{% endblock %}
 	</div>
 
 	<footer>

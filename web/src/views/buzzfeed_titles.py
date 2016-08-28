@@ -12,7 +12,7 @@ buzzfeed_titles = Blueprint("buzzfeed_titles", __name__)
 
 # Display Markovishly generated buzzfeed titles.
 @buzzfeed_titles.route("/buzzfeed")
-def buzzfeed():
+def index():
 #{
     feed = get_feed()
     j_feed = json.loads(feed)
